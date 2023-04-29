@@ -19,13 +19,26 @@ repositories {
 }
 
 dependencies {
+	// boot
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-web-services'
-	implementation 'org.springframework.boot:spring-boot-devtools:3.0.6'
-	compileOnly 'org.projectlombok:lombok'
+	implementation 'org.springframework.boot:spring-boot-devtools'
+
+	// jsp
+	compileOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+	compileOnly 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.0.0'
+	implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.0'
+	implementation 'org.apache.tomcat:tomcat-jasper:10.1.8'
+
+	// DB
 	runtimeOnly 'com.mysql:mysql-connector-j'
+	compileOnly 'org.projectlombok:lombok'
+
+	// lombok
 	annotationProcessor 'org.projectlombok:lombok'
+
+	// test code
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
